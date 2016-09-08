@@ -9,10 +9,10 @@ print "\n\n\033[1m\033[4mQUORA : UPVOTED QUESTION-ANSWER\033[0m"
 print "###############################\n"
 
 # if username passed as argument
-if '1' in argv and argv[1] and not argv[1].isspace():
+try:
 	quora_id = argv[1]
 	print "\033[1mScraping\033[0m https://www.quora.com/profile/\033[4m"+quora_id+"\033[0m/activity/"
-else:
+except IndexError:
 	quora_id = raw_input("Enter your \033[1mQuora\033[0m username\n(Example: https://www.quora.com/profile/\033[4m<username>\033[0m/activity): ")
 
 activity_url = 'https://www.quora.com/profile/'+quora_id+'/activity'
